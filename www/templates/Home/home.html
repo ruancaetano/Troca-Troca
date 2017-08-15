@@ -1,0 +1,65 @@
+<ion-view view-title="Home" hide-nav-bar="true">
+  <ion-content class="home">  
+ 		
+    <h1>Olá, {{nomeESobrenome}}</h1>
+	<div class="perfilUsuario">
+		<img ng-src="{{dadosUser.imagem}}" alt="user image" 
+			ng-click="$state.go('menu.miniPagina',{idUsuario : dadosUser.id})">
+	</div>
+
+	<div class="row botoes">
+		<div class="col">
+			<a href="#/menu/perfil">
+				<img src="img/perfil-icon.png" alt="icon">
+				<span>Perfil</span>
+			</a>
+		</div>
+		<div class="col">
+			<a href="#/menu/minhasDivulgacoes">
+				<img src="img/minhasDivulgacoes-icon.png" alt="icon">
+				<span>Minhas Divulgações</span>
+			</a>
+		</div>
+	</div>
+	
+	<div class="row botoes">
+		<div class="col">
+			<a href="#/menu/vendas">
+				<img src="img/divulgacoes-icon.png" alt="icon">
+				<span>Divulgações</span>
+			</a>
+		</div>
+		<div class="col">
+			<a href="#/menu/novaVenda">
+				<img src="img/vender-icon.png" alt="icon">
+				<span>Vender</span>
+			</a>
+		</div>
+	</div>
+	
+	<div class="row botoes">
+		<div class="col">
+			<a href="#/menu/conversas">
+				<img src="img/conversas-icon.png" alt="icon">
+				<span>Conversas</span>
+			</a>
+		</div>
+		<div class="col">
+			<a href="#/menu/notificacoes">
+				<img src="img/notificacoes-icon.png" alt="icon">
+				<span>Notificações <sup>{{contadorNotificacao}}</sup></span>
+			</a>
+		</div>
+	</div>
+
+	<div class="row botoes">
+		<div class="col col-50 col-offset-25">
+			<a href="" ng-click="abrirModalOutros()">
+				<img src="img/outros-icon.png" alt="icon">
+				Outros
+			</a>
+			
+		</div>
+	</div>
+  </ion-content>
+</ion-view>

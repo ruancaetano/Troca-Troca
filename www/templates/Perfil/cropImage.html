@@ -1,0 +1,28 @@
+<ion-modal-view class="cropPerfilImage">
+    
+    <ion-header-bar align-title="center" class="bar-nav bar-positive">
+        <button class="button button-icon ion-chevron-left" ng-click="cropModal.hide()"></button>
+        <h1 class="title">Selecionar Imagem</h1>
+    </ion-header-bar>
+
+
+    <ion-content class="padding">    
+        <div class="row cropArea">
+            <div class="col">
+                 <img-crop image="imagemSelecionada" result-image="imagemFinal"></img-crop>
+            </div>
+        </div>
+        <p>Imagem recortada</p>
+        <div id="resultado">
+            <img  class="circleImg" ng-src="{{imagemFinal}}">
+        </div>  
+
+        <div class="row">
+            <div class="col-50 col-offset-25">
+                <button type="button" class="button-verde" ng-click="salvarCropImage(imagemFinal)">
+                    Salvar
+                </button>
+            </div>
+        </div>        
+    </ion-content>
+</ion-modal-view>

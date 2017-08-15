@@ -1,0 +1,46 @@
+<ion-view view-title="Notifiações">
+  <ion-content class="notificacoes">  
+
+	<div class="list">
+	    <a class="item item-avatar" ng-repeat="notificacao in notificacoes | orderObjectBy : 'horario' : 'true'" 
+	    	ng-switch="notificacao.tipo" ng-class="{'notificacaoNVisualizada': notificacao.visualizada ==  false}">
+	     	
+	     	<img ng-src="{{usuarios[notificacao.idUsuario].imagem}}"
+	     		ng-click="$state.go('menu.miniPagina',{idUsuario : notificacao.idUsuario})">
+
+			<h2 ng-click="notificacao.visualizada = true; $state.go('menu.conversas')" ng-switch-when="mensagem">
+				{{primeiroNome(notificacao.idUsuario)}} te enviou uma mensagem.
+			</h2>
+
+			<h2 ng-click="notificacao.visualizada = true; $state.go('menu.miniPagina',{idUsuario : userAtual.id})" ng-switch-when="avaliacao">
+				{{primeiroNome(notificacao.idUsuario)}} te avaliou.
+			</h2>
+
+			<h2 ng-click="notificacao.visualizada = true; $state.go('menu.minhasDivulgacoes'), 
+				{'idVendaToScroll' : notificacao.idVenda}" ng-switch-when="reacao">
+					{{primeiroNome(notificacao.idUsuario)}} reagiu na sua divulgação.
+			</h2>
+
+			<h2 ng-click="notificacao.visualizada = true; $state.go('menu.minhasDivulgacoes', 
+				{'idVendaToScroll' : notificacao.idVenda})" ng-switch-when="comentario">
+					{{primeiroNome(notificacao.idUsuario)}} comentou sua divulgação.
+			</h2>
+			
+			<h2 ng-click="notificacao.visualizada = true; $state.go('menu.vendas', {'idVendaToScroll' : notificacao.idVenda})" 
+				ng-switch-when="comentario/assinatura">
+					{{primeiroNome(notificacao.idUsuario)}} comentou na divulgação:.
+			</h2>
+
+			<h2 ng-click="notificacao.visualizada = true; $state.go('menu.vendas', {'idVendaToScroll' : notificacao.idVenda})" 
+				ng-switch-when="reacao/assinatura">
+					{{primeiroNome(notificacao.idUsuario)}} reagiu na divulgação:
+			</h2>
+
+
+	      	<p ng-if="notificacao.idVenda">{{vendas[notificacao.idVenda].titulo}}</p>
+
+	    </a>
+	</div>
+
+  </ion-content>
+</ion-view>

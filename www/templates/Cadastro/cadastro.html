@@ -1,0 +1,82 @@
+<ion-view view-title="Cadastro" class="cadastro">
+  <ion-content>
+  
+  <div class="logo">
+    <img src="img/logo.png" class="logoCentralizado" alt="Logo">
+    <p>Troca-Troca</p>
+  </div>
+  
+  <!-- Cadastro -->
+  <form name="formCadastro" novalidate>
+  
+    <p>Faça o seu cadastro:</p>
+      
+    <!-- Validação do formulário -->
+    <div class="errorBox">
+      <p ng-show="formCadastro.nome.$error.required && formCadastro.nome.$dirty">
+        O campo nome é obrigatório
+      </p>
+      <p ng-show="formCadastro.email.$error.required && formCadastro.email.$dirty">
+        O campo E-mail é obrigatório
+      </p>
+      <p ng-show="formCadastro.senha.$error.required && formCadastro.senha.$dirty">
+        O campo senha é obrigatório
+      </p>
+      <p ng-show="formCadastro.confirmarSenha.$error.required && formCadastro.confirmarSenha.$dirty">
+        O campo confirmar senha é obrigatório
+      </p>
+      <p ng-show="formCadastro.email.$invalid && formCadastro.email.$dirty">
+        O e-mail informado é inválido
+      </p>
+      <p ng-show="formCadastro.senha.$dirty && formCadastro.confirmarSenha.$dirty && dadosCadastro.senha != dadosCadastro.confirmarSenha">
+        As senhas informadas não são iguais
+      </p>
+      <p ng-show="formCadastro.senha.$error.minlength && formCadastro.senha.$dirty">
+        A senha deve ter mais que 6 caracteres
+      </p>
+    </div>
+
+  
+    <div class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Nome</span>
+        <input type="text" placeholder="Digite seu nome" name="nome" ng-model="dadosCadastro.nome" required>
+      </label>
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">E-mail</span>
+        <input type="email" placeholder="Digite seu e-mail" name="email" ng-model="dadosCadastro.email" required>
+      </label>
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Senha</span>
+        <input type="password" placeholder="Digite sua senha" name="senha" ng-model="dadosCadastro.senha" 
+          ng-minlength="6" required>
+      </label>
+
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Confirmar Senha</span>
+        <input type="password" placeholder="Confirme sua senha" name="confirmarSenha" ng-minlength="6" 
+          ng-model="dadosCadastro.confirmarSenha" required>
+      </label>
+    </div>
+
+    <button id="btCadastrar" class="button-azul" ng-disabled="formCadastro.$invalid" 
+      ng-click="criarUsuario()">
+        Cadastrar
+    </button>
+  </form>
+
+  <!-- Login -->
+  <hr class="divisoria">
+  <div class="row">
+    <div class="col">
+      <p>Já possui uma conta?</p>
+      <a href="#/login" class="button-clear-azul">
+        Realizar Login
+      </a>
+    </div>
+  </div>
+
+  </ion-content>
+</ion-view>

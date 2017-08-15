@@ -1,0 +1,46 @@
+<ion-view view-title="Perfil" class="perfil" ng-init="buscarCidadesPorSigla(perfilUser.estado)">
+  <ion-content class="padding-top">  
+    
+    <!-- Imagem pefil -->
+    <label for="inputImagemPerfil">
+        <img ng-src="{{perfilUser.imagem}}" class="imagemPerfil" ng-click="">
+        <input type="file" id="inputImagemPerfil">
+    </label>
+  
+    <form>           
+      <p>Dados Pessoais</p>
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Nome</span>
+          <input type="text" ng-model="perfilUser.nome">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">E-mail</span>
+          <input id="inputEmail" type="email" disabled ng-model="perfilUser.email">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Telefone</span>
+          <input class="telefone" type="text" ng-model="perfilUser.telefone">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Celular</span>
+          <input class="celular" type="text" ng-model="perfilUser.celular">
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Bio</span>
+          <textarea ng-model="perfilUser.bio" rows="6"></textarea>
+        </label>
+      </div>
+      <div class="row">
+        <div class="col-50 col-offset-25">
+            <button type="button" class="button-verde" ng-click="finalizar()">
+                Salvar
+            </button>
+        </div>
+      </div>  
+    </form>
+
+  
+
+  </ion-content>
+</ion-view>

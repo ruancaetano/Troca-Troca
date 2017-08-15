@@ -1,0 +1,29 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">Reações</h1>
+    <button class="button button-clear button-primary" ng-click="reacoesModal.hide()">Fechar</button>
+  </ion-header-bar>
+  <ion-content class="modalReacoes">
+    <div class="list">
+		<div class="item item-divider">
+			Likes
+		</div>
+	    <a class="item item-avatar" ng-repeat="(key,valor) in vendaSelecionadaReacoes.likes" ng-if="valor">
+	      <img ng-src="{{usuarios[key].imagem}}" 
+	      	ng-click="reacoesModal.hide() ; $state.go('menu.miniPagina',{idUsuario : usuarios[key].id})">
+		      <h2>{{usuarios[key].nome}}</h2>
+		      <p>Like</p>
+	    </a>
+
+		<div class="item item-divider">
+			Deslikes
+		</div>
+	    <a class="item item-avatar" ng-repeat="(key,valor) in vendaSelecionadaReacoes.deslikes" ng-if="valor">
+	      <img ng-src="{{usuarios[key].imagem}}"
+	      	ng-click="reacoesModal.hide() ; $state.go('menu.miniPagina',{idUsuario : usuarios[key].id})">
+	      <h2>{{usuarios[key].nome}}</h2>
+	      <p>Deslike</p>
+	    </a>
+	</div>
+  </ion-content>
+</ion-modal-view>

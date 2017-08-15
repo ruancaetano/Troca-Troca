@@ -1,0 +1,107 @@
+<ion-view view-title="Minhas Divulgações" class="vendas" cache-view="false">
+  <search-bar ng-model="teste"></search-bar>
+  <ion-content class="padding-bottom">  
+      
+    <div class="filtroListaVendas" ng-click="exibirFiltro = !exibirFiltro">
+      <p class="filtroButton">
+        Filtrar Busca:
+        <i class="ion-chevron-down btAbrirFechar" ng-show="!exibirFiltro"></i>
+        <i class="ion-chevron-up btAbrirFechar" ng-show="exibirFiltro"></i>
+      </p>
+
+      <div class="list" ng-show="exibirFiltro">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Estado
+          </div>
+          <select ng-model="filtros.estado" ng-options="estado.sigla as estado.sigla for estado in estados" 
+            ng-change="buscarCidadesPorSigla(filtros.estado)">
+            <option value="">Escolha um Estado</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Cidade
+          </div>
+          <select ng-model="filtros.cidade" ng-options="cidade for cidade in cidades">
+            <option value="">Escolha uma Cidade</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Categoria
+          </div>
+          <select ng-model="filtros.categoria" required>
+            <option value="">Selecionar categoria</option>
+            <option >Imóveis</option>
+            <option >Produtos e outros</option>
+            <option>Serviços</option>
+            <option >Veículo</option>          
+          </select>
+        </label>
+      </div>
+    </div>
+    <ul class="listaVendas">
+     <li class="item-listaVendas" ng-repeat ="venda in vendas | orderObjectBy:'dataPublicacao':'true' 
+        | filtrarVendaTitulo : filtros.titulo | filtrarVendaCidade : filtros.cidade 
+        | filtrarVendaCategoria : filtros.categoria | filtrarVendasUsuario : dadosUser.id" id="{{venda.id}}">
+          <p>
+            {{venda.titulo}}
+          </p>            
+         
+          <p class="verDetalhes" ng-click="verDescricao(venda)">Ver detalhes</p>
+        
+          <!-- Imagens -->
+          <ion-slide-box>
+            <ion-slide class="imagemVenda" ng-repeat="foto in venda.imagens" ng-if="venda.imagens && venda.imagens.length > 0">
+              <img ng-src="{{foto}}" alt="Imagem do produto" ng-click="zoom(foto)">
+            </ion-slide>
+            <ion-slide class="imagemVenda" ng-if="!venda.imagens || !venda.imagens.length > 0">
+              <img src="img/sem-imagem.gif" alt="Imagem do produto">
+            </ion-slide>
+          </ion-slide-box>        
+
+
+          <!-- Curtidas e comentários -->
+          <div class="reacoes">
+            <span class="acoes" ng-click="darLike(venda)">
+              <i class="ion-thumbsup" ng-show="!venda.likes[dadosUser.id]"></i>
+              <i class="ion-thumbsup azul" ng-show="venda.likes[dadosUser.id]"></i>
+            </span>
+            
+            <span class="acoes" ng-click="darDeslike(venda)">
+              <i class="ion-thumbsdown" ng-show="!venda.deslikes[dadosUser.id]"></i>
+              <i class="ion-thumbsdown azul" ng-show="venda.deslikes[dadosUser.id]"></i>
+            </span>
+          
+            <span class="acoes" ng-click="abrirComentarios(venda.id)">
+              <i class="icon ion-ios-chatbubble-outline"></i>
+              <sup>{{calcularNumComentarios(venda)}}</sup>
+            </span>
+    
+            <p class="status" ng-click="abrirReacoes(venda)"><i class="icon ion-chatbubble-working"></i>
+              {{calculaNumReacoes(venda)}} reações
+            </p>
+
+            <div class="row botoesAcao">
+              <div class="col">
+                <button class="button  button-clear icon-left ion-android-share-alt button-dark" ng-click="divulgarVenda(venda)">
+                  Divulgar
+                </button>
+              </div>
+              <div class="col">
+                <button class="button  button-clear icon-left ion-edit button-dark" ng-click="editarVenda(venda.id)">
+                  Editar
+                </button>
+              </div>
+              <div class="col">
+                <a class="button button-icon icon ion-close" ng-click="excluirVenda(venda.id)"></a>
+              </div>
+            </div>
+          </div>         
+      </li>
+    </ul>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,30 @@
+<ion-modal-view>
+	<ion-header-bar class="bar bar-header bar-positive">
+		<h1 class="title">Avaliar</h1>
+		<button class="button button-clear button-primary" ng-click="avaliarModal.hide()">Fechar</button>
+	</ion-header-bar>
+	<ion-content class="padding modalAvaliar">
+
+		<div class="row">
+			<div class="col">
+				<div class="divAvaliar">
+					<ionic-ratings ratingsobj='dadosAvaliar' index='0'></ionic-ratings>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<textarea placeholder="Deixe uma mensagem" rows="5" ng-model="avaliarMsg"></textarea>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col col-50 col-offset-25">
+				<button class="button-verde" ng-click="avaliar(avaliarMsg,dadosAvaliar.rating)">
+					Avaliar
+				</button>
+			</div>
+		</div>
+	</ion-content>
+</ion-modal-view>

@@ -1,0 +1,49 @@
+<ion-view view-title="Login" class="login" ng-init="verificarUserLogado()">
+  <ion-content>
+    <main>
+
+      <div class="logo">
+        <img src="img/logo.png" class="logoCentralizado" alt="Logo">
+        <p>Troca-Troca</p>
+      </div>
+
+      <p class="btFacebook" ng-click="loginComFacebook()">
+        <i class="icon ion-social-facebook"></i>
+      </p>
+    
+      <p>ou</p>
+
+      <!-- Login -->
+      <form name="formLogin" novalidate>
+        <div class="list">
+          <label class="item item-input item-floating-label">
+            <span class="input-label">E-mail</span>
+            <input type="email" placeholder="Digite seu e-mail" name="email" required ng-model="login.email" >
+          </label>
+          <label class="item item-input item-floating-label">
+            <span class="input-label">Senha</span>
+            <input type="password" placeholder="Digite sua senha" name="senha" required ng-model="login.senha" >
+          </label>
+        </div>
+
+        <button id="btLogar" class="button-azul" ng-disabled="formLogin.$invalid" ng-click="logar()">
+          Entrar
+        </button>
+
+        <a id="esqueciSenha" ng-click="recuperarSenha()">Esqueci minha senha</a>
+
+      </form>
+
+      <!-- Cadastro -->
+      <hr class="divisoria">
+      <div class="row">
+        <div class="col">
+          <a href="#/cadastro" id="btCadastrar">
+            <p>Ainda não tem uma conta?</p>
+            <p>Cadastrar</p>
+          </a>
+        </div>
+      </div>
+    </main>
+  </ion-content>
+</ion-view>

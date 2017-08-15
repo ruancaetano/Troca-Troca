@@ -1,0 +1,103 @@
+<ion-view view-title="Editar Venda" class="novaVenda" ng-init="buscarCidadesPorSigla(dadosUser.estado)">
+  <ion-content class="padding-top padding-bottom">  
+    
+    <form name="formNovaVenda">
+      <p>Produto</p>
+      <div class="list">
+        <label class="item item-input item-stacked-label input-contador">
+          <span class="input-label">O que você está vendendo?</span>
+          <input type="text" ng-model="venda.titulo" required maxlength="100" ng-keyup="calculaCaracteres()" ng-trim="false"      placeholder="Obrigatório">
+          <span class="contador">{{contadorCaractes}}</span>
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Preço (R$)</span>
+          <input type="text" ng-model="venda.preco" class="dinheiro">
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Categoria
+          </div>
+          <select ng-model="venda.categoria">
+            <option >Imóveis</option>
+            <option selected>Produtos e outros</option>
+            <option>Serviços</option>
+            <option >Veículo</option>          
+          </select>
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Descrição</span>
+          <textarea ng-model="venda.descricao" rows="6"></textarea>
+        </label>
+      </div>
+      
+      <p ng-click="duvida()">
+        Localização
+        <i class="icon ion-help-circled"></i>
+      </p>
+      
+      <ul class="listaCidadesSelecionadas">
+        <li ng-repeat ="cidadeSelecionada in cidadesSeleciondas" ng-click="retirarCidade(cidadeSelecionada)">
+          {{cidadeSelecionada}} <i class="icon ion-ios-close-empty"></i>
+        </li>
+      </ul>
+
+
+      <div class="list">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Estado
+          </div>
+          <select ng-model="localizacao.estado" ng-options="estado.sigla as estado.sigla for estado in estados" 
+            ng-change="buscarCidadesPorSigla(localizacao.estado)">
+            <option value="">Escolha um Estado</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Cidade
+          </div>
+          <select ng-model="localizacao.cidade" ng-options="cidade for cidade in cidades" ng-change="selecionarCidades()">
+            <option value="">Escolha uma Cidade</option>
+          </select>
+        </label>
+      </div>
+
+      <p ng-show="venda.imagens && venda.imagens.length > 0">
+        Imagens cadastradas
+      </p>
+
+      <ul class="galeria">
+        <li ng-repeat="data in venda.imagens track by $index" ng-click="removerImagemCadastrada(data)">
+          <img ng-src="{{data}}" alt="">
+          <p><i class="icon ion-android-close"></i></p>
+        </li>        
+      </ul>
+      <hr class="divisoria" ng-show="venda.imagens && venda.imagens.length > 0">
+
+
+      <label id="btAdicionarImagem" for="inputImagens">
+        Adicionar Imagens <i class="icon ion-android-add-circle"></i>
+        <input type="file" id="inputImagens" accept="image/*" multiple="multiple">
+      </label>
+
+
+      <ul class="galeria">
+        <li ng-repeat="data in imagens track by $index" ng-click="removerImagem(data)">
+          <img ng-src="{{data.imgView}}" alt="" ng-class="{'imgUploading' : data.uploading}">
+          <progress max="100" ng-value="data.progresso" ng-if="data.uploading"></progress>
+          <p ng-if="!data.uploading"><i class="icon ion-android-close"></i></p>
+        </li>        
+      </ul>
+      
+      <div class="row">
+        <div class="col">
+            <button type="button" class="button-verde" ng-click="editar()" ng-disabled="formNovaVenda.$invalid">
+                Salvar 
+            </button>
+        </div>
+      </div>  
+    </form>
+
+  </ion-content>
+</ion-view>

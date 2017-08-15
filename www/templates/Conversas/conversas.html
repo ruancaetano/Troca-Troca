@@ -1,0 +1,16 @@
+<ion-view view-title="Minhas Conversas" class="conversas">
+  <ion-content class="">  
+
+    <div class="list">
+      <a class="item item-avatar"  ng-repeat="(usuarioId,valor) in listaConversas" 
+        ng-click="valor = 0 ; $state.go('menu.chat',{idUsuario : usuarioId})">
+          <img ng-src="{{usuarios[usuarioId].imagem}}">
+          <h2>{{usuarios[usuarioId].nome}}</h2>
+          <p ng-show="valor === 0">Não há novas mensagens</p>
+          <p ng-show="valor === 1" class="azul">Você tem uma nova mensagem</p>
+          <p ng-show="valor > 1" class="azul">Você têm {{valor}} novas mensagens</p>
+      </a>
+    </div>
+
+  </ion-content>
+</ion-view>

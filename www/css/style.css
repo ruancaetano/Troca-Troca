@@ -1,0 +1,944 @@
+/*--------- CONSTANTES -------*/
+.divisoria{
+	width: 80%;
+}
+
+progress[value] {
+  -webkit-appearance: none;
+   appearance: none;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: #5e5e5d;
+  border-radius: 2px;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: #3299E6;
+  border-radius: 2px; 
+}
+
+.button-azul {
+	background-color: #277dbb;
+	opacity: .8;
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 0;
+	padding: 10px;
+	width: 100%;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: block;	
+}
+
+.menu-azul {
+	background: #387ef5;
+}
+
+.menu-azul .item-content{
+	background-color: #387ef5;
+	color: white;
+}
+
+.button-azul:hover {
+	opacity: .7;
+	color: white;
+}
+
+.button-verde {
+	background-color: #33cd5f;
+	opacity: .8;
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 0;
+	padding: 10px;
+	width: 100%;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	
+}
+
+.button-verde:hover {
+	opacity: .7;
+	color: white;
+}
+.button-clear-azul{
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px;
+	font-weight: bold;
+	color: #277dbb;
+	text-decoration: none;
+	font-size: 17px;
+}
+.button-clear-azulClaro{
+	display: block;
+	text-align: center;
+	text-decoration: none;
+	padding: 10px;
+	font-weight: bold;
+	color: #0096e6;
+	text-decoration: none;
+	font-size: 17px;
+}
+
+.errorBox{
+	text-align: center;
+	margin-top: 20px;
+}
+.errorBox{
+	font-size: 13px;
+	color: #a94442;
+}
+
+.input-contador .contador{
+	position: absolute;
+	top: 35px;
+	right: 10px;
+	font-size: 15px;
+}
+
+.input-contador input{
+	padding-right: 60px;
+}
+
+.azul {
+	color : #387ef5 !important;
+}
+
+.imagemPerfil{
+	position: relative;
+	width: 120px;
+	height: 120px;
+	left: 50%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: -60px;
+	border-radius: 50%;
+}
+
+/* -------- Personalização popup ------*/
+.popup{
+	width: 90% !important;
+	border-radius: 10px !important;
+	background-color: #fff !important;
+}
+.popup-head{
+	padding: 7px !important;
+	border: none !important;
+	font-weight: bold !important;
+}
+.popup-body{
+	font-size: 16px;
+	color: #5e5e5d !important;
+	text-align: center;
+}
+.iconeErroAlerta,.iconeDuvidaAlerta,.iconeSucessoAlerta{
+	font-size: 70px;
+}
+.iconeErroAlerta{
+	color: #FF3030;
+}
+.iconeDuvidaAlerta{
+	color: #387ef5;
+}
+.iconeSucessoAlerta {
+	color: #23CB29;
+}
+/*--------- FLOAT LABEL INPUT ------- */
+.item-floating-label .placeholder-icon {
+	padding-right: 18px;
+	position: absolute;
+	bottom: 9px;
+	left: 17px;
+}
+
+.item-floating-label {
+	padding-left: 40px !important;
+}
+
+/*----------- LOGO -----------*/
+.logo {
+	text-align: center;
+	margin: 0px;
+}
+
+.logo p{
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.logo img{
+	width: 80px;
+}
+
+/*----------- LOGIN ----------*/
+#btLogar {
+	position: relative;
+	left: 60%;
+	width: 30%;
+	margin: 10px;
+}
+.login main{
+	margin-top: 15px;
+	padding: 0;
+}
+.login {
+	background: url('../img/fundoLogin.jpg') center center no-repeat;
+	background-size: 100% 100%; 
+	background-color: transparent;
+	margin: auto; 
+	padding: 0;
+}
+
+.login .item{
+	border: none;
+}
+.login .item input{
+	color: white;
+	border-bottom: 1px solid white;
+	width: 90%;
+}
+.login .item .input-label{
+	color: white;
+}
+.login p{
+	text-align: center;
+	font-size: 17px;
+	padding: 0;
+	margin: 10px 0 5px 0;
+	color: white;	
+	font-weight: bold;
+}
+.login #esqueciSenha{
+	display: block;
+	text-align: center;
+	margin-top: 20px;
+	padding: 5px;
+	font-weight: bold;
+	color: white;
+	text-decoration: none;
+}
+.login #btCadastrar{
+	text-decoration: none;
+}
+
+.login .btFacebook{
+	margin: 20px auto;
+	padding: 0;
+	background-color: #0096e6;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	color: #fff;
+	font-size: 35px;
+	line-height: 50px;
+	opacity: .8;
+	text-align:center;
+}
+.login #btCadastrar {
+	display: block;
+	text-align: center;
+}
+
+/*----------- CADASTRO ----------*/
+.cadastro #btCadastrar {
+	position: relative;
+	left: 60%;
+	width: 30%;
+	margin: 10px;
+}
+
+.cadastro {
+	background-color: #e9e9e9;
+}
+
+.cadastro .item{
+	border: none;
+}
+.cadastro .item input{
+	color: #5e5e5d;
+	border-bottom: 1px solid #5e5e5d;
+	width: 90%;
+}
+.cadastro .item .input-label{
+	color: #387ef5;
+}
+.cadastro .col > p, .cadastro .logo p, .cadastro form > p{
+	text-align: center;
+	font-size: 17px;
+	padding: 0;
+	margin: 10px 0 5px 0;
+	color: #5e5e5d;	
+	font-weight: bold;
+}
+
+/*----------- PERFIL ----------*/
+.cropPerfilImage #iconeVoltar{
+	color: white;
+	margin: 0;
+}
+
+.perfil input[type="file"]{
+	display: none;
+}
+
+.cropPerfilImage .cropArea {
+	background: #E4E4E4;
+	overflow: hidden;
+	width: 100%;
+	height:300px;
+	margin: 0;
+	padding: 0;
+}
+
+.cropPerfilImage p{
+	color: #009F9D;
+	font-size: 17px;
+	text-align: center;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+.cropPerfilImage .circleImg {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+}
+.cropPerfilImage #resultado{
+	text-align: center;
+}
+
+.perfil p {
+	font-size: 20px;
+	text-align: center;
+	margin: 20px 0;
+	color: #278bc4;
+}
+
+.perfil input:disabled {
+	background-color: inherit;
+}
+
+/*----------- Nova venda ----------*/
+.novaVenda #btAdicionarImagem{
+	font-size: 20px;
+	text-align: center;
+	display: block;
+	padding: 5px;
+	color: #278bc4;
+	margin: 15px 0;
+
+}
+.novaVenda #btAdicionarImagem input{
+	display: none;
+}
+
+.novaVenda h1{
+	font-size: 17px;
+	text-align: center;
+	margin: 20px 0;
+	color: #278bc4;
+	font-weight: bold;
+}
+.novaVenda p {
+	font-size: 20px;
+	text-align: center;
+	margin: 20px 0;
+	color: #278bc4;
+}
+
+.novaVenda .galeria {
+  list-style-type: none;
+}
+.novaVenda .imgUploading{
+	opacity: .4;
+}
+
+.novaVenda .galeria progress{
+	position: relative;
+	top: -85px;
+	width: 95%;
+}
+
+.novaVenda .galeria p{
+	position: relative;
+	top: -85px;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	margin: auto;
+	border-radius: 50%;
+	padding: 0;
+	color: white;
+	background-color:#277dbb;
+}
+
+.novaVenda .galeria li {
+	display: inline-block;
+	width: 45%;
+	margin: 0px 2.5%;
+	padding: 0;
+}
+.novaVenda .galeria li img{
+	width: 100%;
+	height: 125px;
+	margin: 0;
+	padding: 0;
+	opacity: .8;
+}
+
+.listaCidadesSelecionadas {
+	list-style-type: none;
+	margin: 20px 10px;
+}
+.listaCidadesSelecionadas li{
+	background-color: #277dbb;
+	display: inline-block;
+	padding: 5px 10px;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 15px;
+	margin: 5px;
+	vertical-align: middle;
+}
+
+
+/* ------------- Lista geral de vendas ---------------- */
+
+.btAbrirFechar{
+	float: right;
+	padding: 5px;
+}
+
+.filtroListaVendas {
+	margin-bottom: 20px;
+	background-color: blue;
+}
+.filtroListaVendas .item, .filtroListaVendas .item select{
+	background-color: #e9e9e9;
+	color: #5e5e5d;
+}
+
+.filtroListaVendas .filtroButton{
+	padding: 15px;
+	font-size: 16px;
+	color: #5e5e5d;
+	background-color: #ababab;
+	margin-bottom: 0;
+}
+
+.filtroButton .btAbrirFechar{
+	font-size: 17px;
+}
+
+.item-listaVendas {
+	color: #585858;
+	margin-bottom: 15px;
+	border-bottom: 3px solid #ababab;
+	padding-top: 10px;
+}
+
+.listaVendas sup{
+	font-size: 13px;
+	padding: 0;
+	margin-left: -5px;
+	vertical-align: super;
+}
+
+.item-listaVendas:last-child{
+	border:none;
+}
+.item-listaVendas .imgProfile{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	vertical-align: middle;
+	margin-left: 15px;
+}
+
+.item-listaVendas .nomeProfile{
+	padding-left: 10px;
+	font-size: 16px;
+	display: inline-block;
+	width: 75%;
+}
+.item-listaVendas p{
+	margin: 15px 0 5px 15px;
+	text-align: justify;
+}
+.item-listaVendas span{
+	font-weight: normal;
+	font-size: 15px;
+}
+
+.item-listaVendas .verDetalhes{
+	color: #278bc4;
+	margin: 0;
+	padding: 10px 5px 15px 15px;
+}
+
+.item-listaVendas .imagemVenda img{
+	width: 100%;
+	max-height: 250px;
+}
+
+.item-listaVendas .reacoes{
+	margin-left: 15px;
+}
+
+.item-listaVendas .reacoes .acoes{
+	font-size: 35px;
+	padding-right: 10px;
+}
+.item-listaVendas .reacoes .status{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin: 0;	
+	font-size: 16px;
+}
+
+.item-listaVendas .botoesAcao{
+	text-align: center;
+}
+
+.item-listaVendas .ion-close{
+	color: red;
+}
+/* --------------- Modal Zoom ------------------- */
+.zoom-pane {
+  width: 100%;
+  height: 100%;
+}
+
+
+.zoom-pane .scroll {
+  min-height: 100%;
+  /* Vertical align */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-direction: normal;
+  -moz-box-direction: normal;
+  -webkit-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.zoom-pane img {
+  width: 100%;
+  vertical-align: middle;
+}
+
+/* ----------------- Modal Detalhes ----------------- */
+
+.modalDetalhes p{
+	font-weight: bold;
+	font-size: 15px;
+	margin: 15px 0;
+	color: #5e5e5d;
+}
+
+.modalDetalhes p span{
+	font-weight: normal;
+	font-size: 15px;
+	color: #5e5e5d;
+}
+
+.modalDetalhes .titulo{
+	font-size: 17px;
+	text-align: center;
+	margin: 15px 0 25px;
+	font-weight: normal;
+	color: #387ef5;
+}
+
+.modalDetalhes .descricao{
+	display: block;
+	margin-top: 5px;
+}
+
+/* --------------- Modal comentário ------------------ */
+
+.modalComentarios p{
+	font-weight: bold;
+	font-size: 15px;
+	margin: 15px 0;
+	color: #5e5e5d;
+}
+.divComentarios {
+	margin: 20px 0;
+}
+
+.divComentarios img{
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	vertical-align: middle;
+}
+
+.divComentarios .texto-comentario{
+    display: inline-block;
+    width: 70%;
+    margin-left: 5px;
+    padding: 0;
+    height: auto;
+    vertical-align: middle;
+    word-break: break-all;
+    color: #5e5e5d;
+
+}
+
+.divComentarios .acoes {
+	float: right;
+	color : #387ef5;
+}
+
+.divComentarios .acao {
+	padding: 7px 5px 7px 7px;
+}
+
+.wrapCriarComentario{
+	width: 100%;
+	border: 1px solid #387ef5;
+	border-radius: 5px;
+	margin-bottom: 30px;
+}
+
+.wrapCriarComentario textarea{
+	margin: 0;
+	width: 100%;
+	height: 80px;
+	padding: 5px;
+	resize: none;
+}
+
+.wrapCriarComentario i{
+	font-size: 30px;
+	padding: 0;
+	margin: 0;
+	line-height: 80px;
+	text-align: center;
+	display: block;
+}
+
+/* ------------ Modal Reações --------------- */
+.modalReacoes .item-divider{
+	font-weight: bold;
+	font-size: 15px;
+	color: #387ef5;
+}
+
+.modalReacoes h2 {
+	color: #5e5e5d;
+}
+
+/* --------------- Home --------------------- */
+.home{
+background: #1e3c72;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to top, #2a5298, #1e3c72);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to top, #2a5298, #1e3c72); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.home .perfilUsuario{
+	text-align: center;
+}
+
+.home h1{
+	text-align: center;;
+	font-size: 20px;
+	color: white;
+	margin: 30px 0;
+}
+
+.home .perfilUsuario img{
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	-webkit-box-shadow: 0px 0px 7px 1px rgba(255,255,255,1);
+	-moz-box-shadow: 0px 0px 7px 1px rgba(255,255,255,1);
+	box-shadow: 0px 0px 7px 1px rgba(255,255,255,1);
+}
+
+.home .botoes{
+	text-align: center;
+}
+
+.home .botoes a{
+	text-decoration: none;
+	color: white;
+}
+ 
+
+.home .botoes img{
+	display: block;
+	border-radius: 50%;
+	width: 60px;
+	margin: 10px auto;
+	border: 1px solid white;
+	padding: 10px;
+	-webkit-box-shadow: 0px 0px 4px .5px rgba(255,255,255,1);
+	-moz-box-shadow: 0px 0px 4px .5px rgba(255,255,255,1);
+	box-shadow: 0px 0px 4px .5px rgba(255,255,255,1);
+}
+
+.home sup {
+	padding: 2px 5px;
+	background-color: #fff;
+	color: #274c8d;
+	font-weight: bold;
+	border-radius: 50%;
+	top: -7px;
+}
+
+/* ------- SEARCH BAR  ----*/
+.searchBar {
+	color: #fff;
+	margin: 0 !important;
+	padding: 0;
+}
+.searchBar .icon {
+	font-size: 27px;
+	line-height: 1.2;
+	padding-right: 6px;
+	padding-left: 6px;
+}
+.searchBar .searchTxt {
+	border-bottom: 1px solid #fff;
+	left: 55px;
+	width: calc(100% - 100px);
+	position: fixed;
+	height: calc(100% - 10px);
+}
+.searchBar.numicons2 .searchTxt {
+	width: calc(100% - 135px);
+}
+.searchBar .searchTxt > .bgdiv {
+	background-color: #387ef5;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+.searchBar .searchTxt > .bgtxt {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.searchBar .searchTxt input {
+	background-color: inherit;
+	color: #fff;
+	padding-left: 5px;
+	padding-right:5px;
+}
+
+.searchBar .placeholder-icon{
+	color: #fff;
+}
+
+/* --------------- Mini Página --------------- */
+.miniPagina {
+	color: #585858;
+}
+.miniPagina .nome{
+	font-size: 16px;
+	text-align: center;
+	color: #387ef5;
+}
+
+.miniPagina .wrapInformacoesGeral {
+	background-color: #e9e9e9;
+	padding: 5px;
+	border-radius: 5px;
+	margin: 5px 5px 0px 5px;
+	-webkit-box-shadow: 0px 0px 4px .5px #ababab;
+	-moz-box-shadow: 0px 0px 4px .5px #ababab;
+	box-shadow: 0px 0px 4px .5px #ababab;
+}
+.miniPagina .informacoesGeral{
+	font-weight: bold;
+	padding: 0px 5px;
+
+}
+.miniPagina .informacoesGeral span{
+	font-weight: normal;
+}
+
+.miniPagina .bio{
+	margin: 0px;
+	padding: 0px 15px;
+	white-space: pre-line;
+	font-size: 14px;
+	letter-spacing: .2px;
+}
+
+.miniPagina .botoesAcao{
+	text-align: center;
+}
+
+.miniPagina .icon, .miniPagina .button-clear{
+		color: #387ef5;
+}
+
+.miniPagina .ionic_ratings .read_only {
+    pointer-events:none !important;
+}
+
+.miniPagina .divAvaliacao {
+	font-size: 30px;
+	padding: 5px;
+}
+
+.miniPagina .listaAvaliacaoes .item{
+	border: none;
+}
+
+
+.miniPagina .listaAvaliacaoes .ion-ios-star{
+	color: #edc957;
+}
+
+.miniPagina .listaAvaliacaoes .item-divider{
+	text-align: center;
+}
+
+/* ------------------- Modal avaliar -------------------- */
+.modalAvaliar textarea {
+	width: 100%;
+	border: 1px solid #387ef5;
+	padding: 5px;
+	border-radius: 5px;
+	resize: none;
+}
+
+.modalAvaliar .divAvaliar span{
+    display: inline;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0;
+    font-size: 30px;
+}
+
+
+.modalAvaliar .divAvaliar{
+    display: block;
+    margin: 10px 0 20px 0;
+    padding: 0;
+    height: auto;
+}
+
+
+/* --------------- Chat -------------------------- */
+.chatHeader {
+	height: auto;
+	background-color: #33b5e5;
+	margin: 0;
+	padding: 5px;
+	color: white;
+	height: 8vh;
+}
+.chatHeader span{
+	font-size: 17px;
+	padding-left: 10px;
+}
+
+.chatHeader img{
+	height: 100%;
+	border-radius: 50%;
+	vertical-align: middle;
+	padding: 0;
+	margin-left: 10px;
+}
+
+
+.chatBody{
+	overflow-y: hidden;
+	height: 75vh;
+	margin: 0;
+}
+
+.chatBody .mensagemRecebida{
+	float: left;
+	clear: both;
+	width: auto;
+	max-width: 80%;
+	background-color: #ababab;
+	color: white;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 5px;
+
+}
+
+.chatBody .mensagemEnviada{
+	float: right;
+	clear: both;
+	width: auto;
+	max-width: 80%;
+	background-color: #4cc5e4;
+	color: white;
+	border-radius: 10px;
+	padding: 10px;
+	margin: 5px;
+}
+.chatFooter{
+	height: 8vh;
+	border-top: 1px solid #ababab;
+	padding: 5px;
+}
+
+.chatFooter input{
+	display: inline-block;
+	width: 85%;
+	height: 40px;
+	border: none;
+	height: 100%;
+	padding-left: 10px;
+}
+
+.chatFooter a{
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* ------------ Notificações --------------- */
+.notificacoes a {
+	text-decoration: none;
+}
+
+.notificacoes .notificacaoNVisualizada h2{
+	color: #387ef5;
+}
+
+/* ------------ Modal menu outros ------------- */
+.modalOutrosMenu {
+	color: #5e5e5d;
+}

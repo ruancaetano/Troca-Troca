@@ -1,0 +1,31 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">Comentários</h1>
+    <button class="button button-clear button-primary" ng-click="comentariosModal.hide()">Fechar</button>
+  </ion-header-bar>
+  <ion-content class="padding modalComentarios">
+	<div class="row wrapCriarComentario">
+		<div class="col col-90">
+			<textarea placeholder="Deixe um comentário" rows="6" ng-model="input.comentario"></textarea>
+		</div>
+		<div class="col col-10" ng-click="criarComentario(vendas[indiceVendaComentarios])">
+			<i class="btEnviarComentario ion-ios-chatbubble-outline"></i>
+		</div>
+	</div>
+
+	<p class="titulo">Comentários</p>
+	
+	<div class="divComentarios" 
+		ng-repeat="comentario in vendas[indiceVendaComentarios].comentarios | orderBy:'dataCriacao':'true' track by $index">
+			<div class="acoes" ng-show="comentario.idCriador === dadosUser.id">
+				<span class="ion-compose acao" ng-click="editarComentario(comentario)"></span>
+				<span class="ion-close acao" ng-click="deletarComentario(comentario)"></span>
+			</div>
+			<img ng-src="{{usuarios[comentario.idCriador].imagem}}" alt="User foto"
+				ng-click="comentariosModal.hide() ; $state.go('menu.miniPagina',{idUsuario : usuarios[comentario.idCriador].id})">
+			<span class="texto-comentario">
+				{{comentario.texto}}
+			</span>  
+	</div>
+  </ion-content>
+</ion-modal-view>

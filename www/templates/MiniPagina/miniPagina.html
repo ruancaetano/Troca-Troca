@@ -1,0 +1,82 @@
+<ion-view view-title="Dados do Usuário" class="miniPagina">
+  <ion-content class="padding-top">  
+      
+
+    <!-- Imagem pefil -->
+    <img ng-src="{{dadosUser.imagem}}" class="imagemPerfil">
+    <p class="nome">{{dadosUser.nome}}</p>
+
+    <div class="wrapInformacoesGeral">
+      <p class="informacoesGeral">E-mail: <span>{{dadosUser.email}}</span></p>
+      <p class="informacoesGeral" ng-show="dadosUser.telefone && dadosUser.telefone.length > 0">
+        Telefone: <span>{{dadosUser.telefone}}</span>
+      </p>
+      <p class="informacoesGeral" ng-show="dadosUser.celular && dadosUser.celular.length > 0">
+        Celular: <span>{{dadosUser.celular}}</span>
+      </p>  
+    </div>
+    
+
+    <p class="bio" ng-show="dadosUser.bio && dadosUser.bio.length > 0">
+      {{dadosUser.bio}}
+    </p>
+
+    
+    <div class="row botoesAcao">
+      <div class="col">
+        <button class="button  button-clear icon-left ion-ios-list-outline"
+         ng-click="$state.go('menu.vendas',{idUsuario : idUsuario})" ng-if="idUsuario != userAtual.id">
+            Vendas
+        </button>
+        <button class="button  button-clear icon-left ion-ios-list-outline"
+         ng-click="$state.go('menu.minhasDivulgacoes')" ng-if="idUsuario == userAtual.id">
+            Vendas
+        </button>
+      </div>
+      <div class="col">
+        <button class="button  button-clear icon-left ion-star" 
+          ng-click="abrirAvaliar()" ng-disabled="dadosUser.id === userAtual.id">
+          Avaliar
+        </button>
+      </div>
+      <div class="col">
+        <button class="button button-icon icon ion-chatbubbles" 
+          ng-disabled="dadosUser.id === userAtual.id" ng-click="$state.go('menu.chat',{idUsuario : dadosUser.id})">
+        </button>
+      </div>
+    </div>
+    
+
+    <!-- Avaliações -->
+    <div class="divAvaliacao">
+      <ionic-ratings ratingsobj='objetoAvaliacao' index='0'></ionic-ratings>
+    </div>
+  
+    <div class="listaAvaliacaoes">
+      <div class="list">
+
+         <div class="item item-divider">
+          Avaliações: {{contadorAvaliacoes}}
+        </div>
+
+        <a class="item item-avatar" href="" ng-repeat="avaliacao in listaAvaliacoes">
+          <img ng-src="{{avaliacao.imgUser}}">
+          <h2>{{avaliacao.nomeUser}}</h2>
+          <p>
+            <i class="icon ion-ios-star"></i>
+            {{avaliacao.estrelas}}
+            <br>
+            {{avaliacao.msg}}
+          </p>
+        </a>
+
+
+      </div>
+    </div>
+
+
+
+  
+
+  </ion-content>
+</ion-view>

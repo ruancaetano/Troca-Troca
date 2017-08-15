@@ -1,0 +1,119 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "br-cidades-estados",
+        "scope": null,
+        "escapedName": "br-cidades-estados",
+        "name": "br-cidades-estados",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/home/ruancaetano/Desenvolvimento/Troca-Troca/Troca-Troca"
+    ]
+  ],
+  "_from": "br-cidades-estados@latest",
+  "_id": "br-cidades-estados@1.1.0",
+  "_inCache": true,
+  "_location": "/br-cidades-estados",
+  "_nodeVersion": "6.5.0",
+  "_npmOperationalInternal": {
+    "host": "packages-16-east.internal.npmjs.com",
+    "tmp": "tmp/br-cidades-estados-1.1.0.tgz_1475168995885_0.32782431063242257"
+  },
+  "_npmUser": {
+    "name": "alairjt",
+    "email": "alairjt@gmail.com"
+  },
+  "_npmVersion": "3.10.3",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "br-cidades-estados",
+    "scope": null,
+    "escapedName": "br-cidades-estados",
+    "name": "br-cidades-estados",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/br-cidades-estados/-/br-cidades-estados-1.1.0.tgz",
+  "_shasum": "b9146c3574785ce1d43932b36e11ef79f5467b51",
+  "_shrinkwrap": null,
+  "_spec": "br-cidades-estados",
+  "_where": "/home/ruancaetano/Desenvolvimento/Troca-Troca/Troca-Troca",
+  "author": {
+    "name": "https://github.com/alairjt/br-cidades-estados/graphs/contributors"
+  },
+  "bugs": {
+    "url": "https://github.com/alairjt/br-cidades-estados/issues"
+  },
+  "dependencies": {},
+  "description": "Utilitário AngularJS - Cidades e Estados brasileiros",
+  "devDependencies": {
+    "del": "~1.2.0",
+    "event-stream": "~3.3.1",
+    "gesalakacula": "^1.4.0",
+    "gulp": "~3.9.0",
+    "gulp-angular-protractor": "0.0.6",
+    "gulp-bump": "^0.3.1",
+    "gulp-concat": "~2.6.0",
+    "gulp-connect": "^2.3.1",
+    "gulp-footer": "~1.0.5",
+    "gulp-git": "^1.4.0",
+    "gulp-header": "~1.2.2",
+    "gulp-jshint": "1.11.2",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "~1.2.2",
+    "gulp-uglify": "~1.2.0",
+    "jasmine-core": "^2.3.4",
+    "jshint-stylish": "~2.0.1",
+    "karma": "^0.13.9",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-coverage": "~0.5",
+    "karma-firefox-launcher": "~0.1",
+    "karma-jasmine": "~0.3",
+    "karma-ng-html2js-preprocessor": "^0.1.0",
+    "karma-sauce-launcher": "^0.2.14",
+    "phantomjs": "^1.9.18",
+    "protractor": "^3.0.0",
+    "run-sequence": "^1.1.2"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "b9146c3574785ce1d43932b36e11ef79f5467b51",
+    "tarball": "https://registry.npmjs.org/br-cidades-estados/-/br-cidades-estados-1.1.0.tgz"
+  },
+  "gitHead": "dce2571a72f732f531c9706d0ab98d0b7e3fc523",
+  "homepage": "https://github.com/alairjt/br-cidades-estados",
+  "keywords": [
+    "angular",
+    "angular-ui",
+    "br-cidades-estados",
+    "cidade",
+    "cidades",
+    "estado",
+    "estados"
+  ],
+  "license": "MIT",
+  "main": "./index.js",
+  "maintainers": [
+    {
+      "name": "alairjt",
+      "email": "alairjt@gmail.com"
+    }
+  ],
+  "name": "br-cidades-estados",
+  "optionalDependencies": {},
+  "readme": "# br-cidades-estados\nUtilitário AngularJS - Cidades e Estados brasileiros\n\n### Install\n\n**With Bower**\n* Install the dependency:\n\n   ```sh\n   bower install br-cidades-estados\n   ```\n* Include module dependency:\n\n   ```javascript\n   angular.module('myApp', ['br.cidades.estados']);\n   ```\n\n**With NPM**\n* Install the dependency:\n\n    ```sh\n    npm install br-cidades-estados\n    ```\n* Include module dependency:\n    ```javascript\n    // CommonJS\n    var brCidadesEstados = require('br-cidades-estados');\n    angular.module('myApp', [brCidadesEstados, ...]);\n    ```\n\n    ```javascript\n    // ES6 module\n    import brCidadesEstados from 'br-cidades-estados';\n    angular.module('myApp', [brCidadesEstados, ...]);\n    ```\n\n\n### How To Use\n\n1. **Add enter plugin after your AngularJS.**\n\n   ```html\n   <script src=\"angular.min.js\"></script>\n   <script src=\"cidades.estados.min.js\"></script>\n   ```\n2. **Add enter module dependency to your app.**\n\n   ```javascript\n   angular.module('yourApp', ['br.cidades.estados']);\n   ```\n3. **Using in javascript and html.**\n\n   ```javascript\n    angular.module('yourApp', ['br.cidades.estados']).controller('Controller', function($scope, brCidadesEstados){\n\t$scope.estados = brCidadesEstados.estados;\n\n\t$scope.buscarCidadesPorSigla = function(sigla){\n            $scope.cidades = brCidadesEstados.buscarCidadesPorSigla(sigla);\n\t}\n    });\n   ```\n\n   ```html\n    <select ng-model=\"e\" ng-options=\"estado.sigla as estado.nome for estado in estados\" ng-change=\"buscarCidadesPorSigla(estado.sigla)\">\n        <option value=\"\">Escolha um Estado</option>\n    </select>\n\n    <select ng-model=\"cidade_escolhida\" ng-options=\"cidade for cidade in cidades\">\n        <option value=\"\">Escolha uma Cidade</option>\n    </select>\n   ```\n\n### How to release\n\nUse gulp to bump version, build and create a tag. Then push to GitHub:\n\ngulp release [--patch|--minor|--major]\ngit push --tags origin master # push everything to GitHub",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alairjt/br-cidades-estados.git"
+  },
+  "scripts": {},
+  "version": "1.1.0"
+}

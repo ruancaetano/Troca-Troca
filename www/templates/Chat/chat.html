@@ -1,0 +1,30 @@
+<ion-view view-title="Chat" class="chat">
+  <ion-content>  
+   
+    <div class="chatHeader">
+        <img ng-src="{{destinatario.imagem}}" alt="foto user"
+          ng-click="$state.go('menu.miniPagina',{idUsuario : idDestinatario})">
+        <span>{{destinatario.nome}}</span>
+    </div>
+
+    <div class="chatBody" id="chatBody">
+      <ul>
+        <li ng-repeat="mensagem in mensagens" 
+          ng-if="(mensagem.to === idDestinatario && mensagem.from === idUserAtual) 
+          || (mensagem.to === idUserAtual && mensagem.from === idDestinatario)">
+          
+          <!-- se o usuário recebeu a mensagem -->
+          <p ng-if="mensagem.to === idUserAtual" class="mensagemRecebida">{{mensagem.texto}}</p>     
+          <!-- se o usuário atual enviou a mensagem -->  
+          <p ng-if="mensagem.from === idUserAtual" class="mensagemEnviada">{{mensagem.texto}}</p>      
+        </li>
+      </ul>
+    </div>
+
+    <div class="chatFooter">
+      <input type="text" placeholder="Digite sua mensagem" ng-model="input.texto">
+      <a class="button button-icon icon ion-paper-airplane" ng-click="enviarMensagem()"></a>
+    </div>
+
+  </ion-content>
+</ion-view>

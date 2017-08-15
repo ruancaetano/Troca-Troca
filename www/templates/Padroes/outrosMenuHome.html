@@ -1,0 +1,19 @@
+<ion-modal-view>
+	<ion-header-bar class="bar bar-header bar-positive">
+		<h1 class="title">Outras opções</h1>
+		<button class="button button-clear button-primary" ng-click="modalOutrosMenu.hide()">Fechar</button>
+	</ion-header-bar>
+	<ion-content class="modalOutrosMenu">
+		<ul class="list">
+		    <a class="item" ng-click="modalOutrosMenu.hide() ; $state.go('menu.miniPagina',{idUsuario : dadosUser.id})">
+				Minha Página
+		    </a>
+		     <a class="item" ng-click="modalOutrosMenu.hide() ; $state.go('menu.buscarUsuarios')">
+				Buscar Vendedores
+		    </a>
+		     <a class="item" ng-click="modalOutrosMenu.hide(); sair()">
+				Sair
+		    </a>
+		</ul>
+	</ion-content>
+</ion-modal-view>

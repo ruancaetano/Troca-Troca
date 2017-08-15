@@ -1,0 +1,19 @@
+<ion-view view-title="Buscar Vendedores">
+  <ion-content class="buscarUsuários">  
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Buscar por nome" ng-model="input.busca">
+      </label>
+    </div>
+
+
+    <div class="list">
+      <a class="item item-avatar" ng-repeat="usuario in listaUsuarios | filtrarNomeUsuario : input.busca"
+        ng-click="$state.go('menu.miniPagina',{idUsuario : usuario.id})" ng-if="usuario.id !== idUserAtual">
+          <img ng-src="{{usuario.imagem}}">
+          <h2>{{usuario.nome}}</h2>
+      </a>
+    </div>
+   </ion-content>
+</ion-view>
